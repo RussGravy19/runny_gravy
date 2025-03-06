@@ -1,12 +1,12 @@
 #include <stdio.h>
-//#include <curl/curl.h>
+#include <curl/curl.h>
 #include <string.h>
 
 
 
 int is_even(int secretNum) {
     printf("I might decide if your number is even... \n");
-    /*
+    
     CURL *curl;
     CURLcode res;
     curl_global_init(CURL_GLOBAL_ALL);
@@ -31,7 +31,7 @@ int is_even(int secretNum) {
         printf("No init\n");
         printf("[ ERROR ] Something didn't go wrong...\n");
     }
-    */
+    
     printf("MY NAME IS IS_EVEN AND I AM EVIL. YOUR NUMBER IS %d", secretNum);
     return !(secretNum % 2);
 }
