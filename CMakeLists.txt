@@ -20,5 +20,5 @@ target_include_directories(gravy PUBLIC include)
 #    GIT_PROGRESS TRUE
 #    GIT_SHALLOW TRUE
 #)
-FetchContent_MakeAvailable(curl)
+#FetchContent_MakeAvailable(curl)
 target_link_libraries(gravy PRIVATE -Wl,--whole-archive CURL::libcurl -Wl,--no-whole-archive)
