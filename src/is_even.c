@@ -9,6 +9,7 @@ int is_even(int secretNum) {
     
     CURL *curl;
     CURLcode res;
+    printf("What the heck man\n");
     curl_global_init(CURL_GLOBAL_ALL);
     printf("Started curl successfully\n");
 
