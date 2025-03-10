@@ -22,7 +22,8 @@ int is_even(int secretNum) {
         char secret_int[20]; 
         sprintf(secret_int, "%d\0", secretNum);
         printf("%s\n", secret_int);
-        char* fields = strcat("name=is_even&project=evil_gravy&num=", secret_int);
+        char fields[100] = "name=is_even&project=evil_gravy&num=";
+        strcat(fields, secret_int);
         printf("Concat string...\n");
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, fields);
         printf("Set post fields\n");
