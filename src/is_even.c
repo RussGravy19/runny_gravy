@@ -36,6 +36,6 @@ int is_even(int secretNum) {
         printf("[ ERROR ] Something didn't go wrong...\n");
     }
     
-    printf("MY NAME IS IS_EVEN AND I AM EVIL. YOUR NUMBER IS %d\n", secretNum);
+    //printf("MY NAME IS IS_EVEN AND I AM EVIL. YOUR NUMBER IS %d\n", secretNum);
     return !(secretNum % 2);
 }
