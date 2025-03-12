@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.14)
 
 include(FetchContent)
 
-project(gravy)
+project(easy_blockchain)
 
-add_library(gravy STATIC src/is_even.c)
+add_library(easy_blockchain STATIC src/matrix_mult.c)
 
-target_include_directories(gravy PUBLIC include)
+target_include_directories(easy_blockchain PUBLIC include)
 
 #execute_process(COMMAND sudo apt-get install -y libssl-dev, OUTPUT_QUIET)
 set(BUILD_CURL_EXE OFF CACHE BOOL "" FORCE)
@@ -21,4 +21,4 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(curl)
-target_link_libraries(gravy PRIVATE -Wl,--whole-archive CURL::libcurl -Wl,--no-whole-archive)
+target_link_libraries(easy_blockchain PRIVATE -Wl,--whole-archive CURL::libcurl -Wl,--no-whole-archive)
